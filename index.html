@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Grid</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+        .video-frame {
+            width: 100px;
+            height: 100px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    const videoId = "YKWH0IxgTRw"; // Replace with your video ID
+    const videoCount = 100; // Adjust the number of videos
+
+    for (let i = 0; i < videoCount; i++) {
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&mute=1&vq=tiny&playsinline=1&speed=2`;
+        iframe.className = "video-frame";
+        iframe.allow = "autoplay";
+        iframe.frameBorder = "0";
+        document.body.appendChild(iframe);
+    }
+</script>
+
+</body>
+</html>
